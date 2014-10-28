@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="__PUBLIC__/Js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Js/index.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Css/public.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Css/index.css" />
+    <title>ListCata</title>
+    
+</head>
+<body>
+<form action="{:U(GROUP_NAME . '/Index/addSort')}" method="post" accept-charset="utf-8">
+    <table class="table" border="0">
+        <tr><th>ID</th> <th>NAME</th> <th>排序</th> <th>PID</th> <th>Action</th> </tr>
+        <foreach name='cat' item='v'>
+        <tr>
+            <td>{$v.id}</td>
+            <td>{$v.name}</td>
+            <td>
+                <input type="text" name="{$v.id}" value="{$v.sort}" />
+            </td>
+            <td>{$v.pid}</td>
+            <td>
+                <a href="{:U(GROUP_NAME . '/Index/addCata', array('pid' => $v['id']))}">[添加子栏目]</a>
+                <a href='#'>[修改]</a>
+                <a href="{:U(GROUP_NAME . '/Index/delCataAction', array('id' => $v['id']))}">[删除]</a>
+            </td>
+        </tr>
+        </foreach>
+        <tr>
+            <td colspan=5 align='center'>
+                <input type="submit" value="Continue &rarr;" />
+            </td>
+        </tr>
+        
+    </table>
+</form>
+</body>
+</html>

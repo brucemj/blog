@@ -14,7 +14,16 @@ Class LoginAction extends Action {
         if ( !$user['username'] || $user['password'] != md5(I('password')) ){
             $this->error('用户名或密码错误');
         }
-        echo '123';
+        $user['logintime'] = time();
+        $user['loginip'] = get_client_ip();
+        M('user')->save($user);
+
+        session('uid', $user['id']);
+        session('username', $user['username']);
+        session('logintime', date('Y-m-d H-i-s', $user['logintime']) );
+        session('loginip', $user['loginip']);
+
+        $this->redirect('Admin/Index/index');
     }
 
     Public function verify(){

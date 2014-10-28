@@ -5,6 +5,7 @@ return array(
     'DEFAULT_GROUP' => 'Index',
     'APP_GROUP_MODE' => 1,
     'APP_GROUP_PATH' => 'Modules',
+    //'URL_HTML_SUFFIX' => '',
 
     //数据库配置
     'DB_HOST' => '172.21.12.58',
