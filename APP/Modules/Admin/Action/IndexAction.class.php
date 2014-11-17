@@ -7,7 +7,13 @@ Class IndexAction extends Action {
     }
 
     Public function listCata(){
-        $this->cat = M('cat')->select();
+        $cat = M('cat')->order('sort ASC')->select();
+        import('Class/Category', APP_PATH);
+        $cat = Category::unlimitedForLevel($cat);
+        
+        //p($cat);
+        //die;
+        $this->cat = $cat;
         $this->display();
     }
 
