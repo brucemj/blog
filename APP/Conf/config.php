@@ -8,7 +8,7 @@ return array(
     //'URL_HTML_SUFFIX' => '',
 
     //数据库配置
-    'DB_HOST' => '172.21.12.58',
+    'DB_HOST' => '172.21.5.142',
     'DB_NAME' => 'blog',
     'DB_USER' => 'root',
     'DB_PWD' => 'root',
