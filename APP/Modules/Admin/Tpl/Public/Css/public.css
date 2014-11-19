@@ -57,7 +57,7 @@ span.msg{color:#666;border:solid 1px #eee;padding:6px;margin-left:10px;}
 .table{width:100%;}
 .table,.table td{border:solid 1px #ccc;}
 .table th{border:solid 1px #ccc;width:100px;}
-.table thead tr td{background: #eee;color:#333;}
+.table thead tr td{background: #eee;color:#333;height: 10px;}
 
 /******按钮*******/
 .bt1{padding:8px 15px;margin-right:6px; background: #ccc;color:#000;border-radius: 3px; text-align: center;float:left;display: block;cursor: pointer;}

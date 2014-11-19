@@ -1,5 +1,5 @@
 <?php
-//header("Content-type: text/html; charset=utf-8"); 
+header("Content-type: text/html; charset=utf-8"); 
 
 Class IndexAction extends Action {
     Public function index(){
@@ -9,11 +9,9 @@ Class IndexAction extends Action {
     Public function listCata(){
         $cat = M('cat')->order('sort ASC')->select();
         import('Class/Category', APP_PATH);
-        $cat = Category::unlimitedForLevel($cat);
+        $cats = Category::unlimitedForLevel($cat);
         
-        //p($cat);
-        //die;
-        $this->cat = $cat;
+        $this->cat = $cats;
         $this->display();
     }
 
@@ -22,27 +20,12 @@ Class IndexAction extends Action {
         $this->display();
     }
 
-    Public function addCataAction(){        
-        /*
-        //header("Content-type: text/html; charset=utf-8"); 
-        //p(I('post.'));
-        //die;
-        $link = mysql_connect('172.21.12.58', 'root', 'root');
-        $query = 'show variables like "character%"';
-        $result = mysql_query($query);
-        p($result);
-        echo  "<table>\n" ;
-        while ( $line  =  mysql_fetch_array ( $result ,  MYSQL_ASSOC )) {
-            echo  "\t<tr>\n" ;
-            foreach ( $line  as  $col_value ) {
-                echo  "\t\t<td> $col_value </td>\n" ;
-            }
-            echo  "\t</tr>\n" ;
-        }
-        echo  "</table>\n" ;
+    Public function addAttr(){
+        $this->pid = I('pid', 0, 'intval');
+        $this->display();
+    }
 
-        //die;
-        */
+    Public function addCataAction(){
         $db = M('cat');
         if ( $db->add(I('post.')) ){
             $this->redirect(GROUP_NAME . '/Index/listCata');

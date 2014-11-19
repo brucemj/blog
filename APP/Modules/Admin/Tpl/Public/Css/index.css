@@ -1,5 +1,5 @@
 @import url("public.css");
-html{overflow-y: hidden;}
+html{overflow-y: auto;}
 #top{height:80px;background:url("../Images/logo.png") #F1F1F1 10px 10px no-repeat; 
 padding-left:300px;border-bottom: solid 2px #666;overflow: hidden; position: relative;}
 #top .menu{margin-top:38px;}
@@ -19,4 +19,4 @@ background:#F1F1F1 10px 10px no-repeat; }
 #left dl dd{margin-top:3px;}
 #left dl dd a{font-size:14px;padding:4px 0px;padding-left:18px;color:#43434F;display:block; }
 #left dl dd a:hover{background:#eee;}
-#right{float:left;overflow: hidden;}
+#right{float:left;overflow-y: auto;}
